@@ -1,0 +1,16 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../router.srcs/sources_1/new/decoder4_16.v" \
+"../../../../router.srcs/sources_1/new/priority_check.v" \
+"../../../../router.srcs/sources_1/new/router.v" \
+
+sv xil_defaultlib  \
+"../../../../router.srcs/sources_1/new/program_test.sv" \
+"../../../../router.srcs/sources_1/new/router_io.sv" \
+"../../../../router.srcs/sim_1/new/top_router_tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
