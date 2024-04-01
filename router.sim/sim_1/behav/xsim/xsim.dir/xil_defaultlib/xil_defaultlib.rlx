@@ -3,10 +3,11 @@
 Oct 13 2023
 20:47:58
 C:/Users/nguye/Desktop/Academic/HK6/Ky_thuat_thiet_ke_kiem_tra/Labs/Lab_2_3/router/router.sim/sim_1/behav/xsim/glbl.v,1697210495,verilog,,,,glbl,,uvm,,,,,,
-C:/Users/nguye/Desktop/Academic/HK6/Ky_thuat_thiet_ke_kiem_tra/Labs/Lab_2_3/router/router.srcs/sim_1/new/top_router_tb.sv,1711769308,systemVerilog,,,,top_router_tb,,uvm,,,,,,
+C:/Users/nguye/Desktop/Academic/HK6/Ky_thuat_thiet_ke_kiem_tra/Labs/Lab_2_3/router/router.srcs/sim_1/new/top_router_tb.sv,1711952683,systemVerilog,,,,top_router_tb,,uvm,,,,,,
 C:/Users/nguye/Desktop/Academic/HK6/Ky_thuat_thiet_ke_kiem_tra/Labs/Lab_2_3/router/router.srcs/sources_1/new/decoder4_16.v,1711638048,verilog,,C:/Users/nguye/Desktop/Academic/HK6/Ky_thuat_thiet_ke_kiem_tra/Labs/Lab_2_3/router/router.srcs/sources_1/new/priority_check.v,,decoder4_16,,uvm,,,,,,
 C:/Users/nguye/Desktop/Academic/HK6/Ky_thuat_thiet_ke_kiem_tra/Labs/Lab_2_3/router/router.srcs/sources_1/new/priority_check.v,1711784220,verilog,,C:/Users/nguye/Desktop/Academic/HK6/Ky_thuat_thiet_ke_kiem_tra/Labs/Lab_2_3/router/router.srcs/sources_1/new/router.v,,priority_check,,uvm,,,,,,
-C:/Users/nguye/Desktop/Academic/HK6/Ky_thuat_thiet_ke_kiem_tra/Labs/Lab_2_3/router/router.srcs/sources_1/new/program_test.sv,1711884231,systemVerilog,,C:/Users/nguye/Desktop/Academic/HK6/Ky_thuat_thiet_ke_kiem_tra/Labs/Lab_2_3/router/router.srcs/sources_1/new/router_io.sv,,program_test,,uvm,,,,,,
-C:/Users/nguye/Desktop/Academic/HK6/Ky_thuat_thiet_ke_kiem_tra/Labs/Lab_2_3/router/router.srcs/sources_1/new/router.v,1711888722,verilog,,,,router,,uvm,,,,,,
-C:/Users/nguye/Desktop/Academic/HK6/Ky_thuat_thiet_ke_kiem_tra/Labs/Lab_2_3/router/router.srcs/sources_1/new/router_io.sv,1711780312,systemVerilog,,C:/Users/nguye/Desktop/Academic/HK6/Ky_thuat_thiet_ke_kiem_tra/Labs/Lab_2_3/router/router.srcs/sim_1/new/top_router_tb.sv,,router_io,,uvm,,,,,,
-C:/Users/nguye/Desktop/Academic/HK6/Ky_thuat_thiet_ke_kiem_tra/Labs/Lab_2_3/router/router.srcs/sources_1/new/stupid_router.v,1711712832,verilog,,,,stupid_router,,uvm,,,,,,
+C:/Users/nguye/Desktop/Academic/HK6/Ky_thuat_thiet_ke_kiem_tra/Labs/Lab_2_3/router/router.srcs/sources_1/new/program_test.sv,1711949652,systemVerilog,,C:/Users/nguye/Desktop/Academic/HK6/Ky_thuat_thiet_ke_kiem_tra/Labs/Lab_2_3/router/router.srcs/sources_1/new/router_io.sv,,program_test,,uvm,,,,,,
+C:/Users/nguye/Desktop/Academic/HK6/Ky_thuat_thiet_ke_kiem_tra/Labs/Lab_2_3/router/router.srcs/sources_1/new/router.v,1711973213,verilog,,C:/Users/nguye/Desktop/Academic/HK6/Ky_thuat_thiet_ke_kiem_tra/Labs/Lab_2_3/router/router.srcs/sources_1/new/selector.v,,router,,uvm,,,,,,
+C:/Users/nguye/Desktop/Academic/HK6/Ky_thuat_thiet_ke_kiem_tra/Labs/Lab_2_3/router/router.srcs/sources_1/new/router_io.sv,1711889449,systemVerilog,,C:/Users/nguye/Desktop/Academic/HK6/Ky_thuat_thiet_ke_kiem_tra/Labs/Lab_2_3/router/router.srcs/sim_1/new/top_router_tb.sv,,router_io,,uvm,,,,,,
+C:/Users/nguye/Desktop/Academic/HK6/Ky_thuat_thiet_ke_kiem_tra/Labs/Lab_2_3/router/router.srcs/sources_1/new/selector.v,1711973026,verilog,,,,selector,,uvm,,,,,,
+C:/Users/nguye/Desktop/Academic/HK6/Ky_thuat_thiet_ke_kiem_tra/Labs/Lab_2_3/router/router.srcs/sources_1/new/stupid_router.v,1711952543,verilog,,,,rtslice;rtslicef;stupid_router,,uvm,,,,,,

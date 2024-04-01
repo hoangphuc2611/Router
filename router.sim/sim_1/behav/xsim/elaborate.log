@@ -5,7 +5,19 @@ Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 5 for port 'out' [C:/Users/nguye/Desktop/Academic/HK6/Ky_thuat_thiet_ke_kiem_tra/Labs/Lab_2_3/router/router.srcs/sources_1/new/router.v:118]
-WARNING: [VRFC 10-3245] cycle delay operator requires a default clocking to be specified [C:/Users/nguye/Desktop/Academic/HK6/Ky_thuat_thiet_ke_kiem_tra/Labs/Lab_2_3/router/router.srcs/sources_1/new/program_test.sv:112]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 5 for port 'out' [C:/Users/nguye/Desktop/Academic/HK6/Ky_thuat_thiet_ke_kiem_tra/Labs/Lab_2_3/router/router.srcs/sources_1/new/router.v:124]
+WARNING: [VRFC 10-3245] cycle delay operator requires a default clocking to be specified [C:/Users/nguye/Desktop/Academic/HK6/Ky_thuat_thiet_ke_kiem_tra/Labs/Lab_2_3/router/router.srcs/sources_1/new/program_test.sv:135]
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.cb
+Compiling module xil_defaultlib.router_io
+Compiling module xil_defaultlib.program_test
+Compiling module xil_defaultlib.decoder4_16
+Compiling module xil_defaultlib.priority_check
+Compiling module xil_defaultlib.selector
+Compiling module xil_defaultlib.router_default
+Compiling module xil_defaultlib.top_router_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot top_router_tb_behav

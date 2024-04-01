@@ -1,0 +1,64 @@
+|selector
+en => out.OE
+sel[0] => sel[0].IN1
+sel[1] => sel[1].IN1
+sel[2] => sel[2].IN1
+sel[3] => sel[3].IN1
+in[0] => temp.DATAIN
+in[1] => temp.DATAIN
+in[2] => temp.DATAIN
+in[3] => temp.DATAIN
+in[4] => temp.DATAIN
+in[5] => temp.DATAIN
+in[6] => temp.DATAIN
+in[7] => temp.DATAIN
+in[8] => temp.DATAIN
+in[9] => temp.DATAIN
+in[10] => temp.DATAIN
+in[11] => temp.DATAIN
+in[12] => temp.DATAIN
+in[13] => temp.DATAIN
+in[14] => temp.DATAIN
+in[15] => temp.DATAIN
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|selector|decoder4_16:comb_3
+en => out.OUTPUTSELECT
+en => out.OUTPUTSELECT
+en => out.OUTPUTSELECT
+en => out.OUTPUTSELECT
+en => out.OUTPUTSELECT
+en => out.OUTPUTSELECT
+en => out.OUTPUTSELECT
+en => out.OUTPUTSELECT
+en => out.OUTPUTSELECT
+en => out.OUTPUTSELECT
+en => out.OUTPUTSELECT
+en => out.OUTPUTSELECT
+en => out.OUTPUTSELECT
+en => out.OUTPUTSELECT
+en => out.OUTPUTSELECT
+en => out.OUTPUTSELECT
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[8] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[9] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[10] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[11] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[12] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[13] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[14] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[15] <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+

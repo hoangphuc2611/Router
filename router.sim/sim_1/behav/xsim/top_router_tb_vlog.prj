@@ -3,6 +3,7 @@ verilog xil_defaultlib  \
 "../../../../router.srcs/sources_1/new/decoder4_16.v" \
 "../../../../router.srcs/sources_1/new/priority_check.v" \
 "../../../../router.srcs/sources_1/new/router.v" \
+"../../../../router.srcs/sources_1/new/selector.v" \
 
 sv xil_defaultlib  \
 "../../../../router.srcs/sources_1/new/program_test.sv" \

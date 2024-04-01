@@ -32,16 +32,19 @@ module router (
     output [15:0] valido_n,
     output [15:0] frameo_n
     );
-    reg busy [15:0];
+    reg busy [15:0], busy_temp[15:0];
     reg [3:0] address [15:0];       // Address register for each input gates
     reg [2:0] address_cnt [15:0];   // Address counter for each input gates
-    reg [1:0] in_sel [15:0];        // Register for saving which input gate to use for each output gates
+    reg [3:0] in_sel [15:0];        // Register for saving which input gate to use for each output gates
     reg [3:0] in_sel_next [15:0];   // Prepare input address
     wire address_flag [15:0];           // Address flag = 1 when done receiving address
     wire [15:0] out_sel_decoder [15:0]; // Output from 16 decoders decoding which output gate to transfer to
     wire [15:0] out_sel_wire [15:0];    // Rearrange for each bus is for 1 output port (previously each bus is for 1 input port)
     wire [3:0] in_sel_wire [15:0];      // 
     
+    wire [15:0] dout_t;
+    wire [15:0] valido_t;
+    wire [15:0] frameo_t;
     
     integer i, j;
     
@@ -54,15 +57,17 @@ module router (
                 address_cnt[i] <= 3'b0;
                 in_sel[i] <= 4'bZ;
                 in_sel_next[i] <= 4'bz;
+                busy[i] <= 1'b0;
+                busy_temp[i] <= 1'b0;
             end
         end
         else begin
             // Looping 16 times for each input/output gates
             for (i = 0; i < 16; i = i + 1) begin
-                //address_flag[i] = (address_cnt[i] == 3'b100);
-                busy[i] <= (out_sel_wire[i] != 16'b0);
+                busy_temp[i] <= (out_sel_wire[i] != 16'b0);
+                busy[i] <= busy_temp[i];  
                 // Shift registers to save address/destination port from din
-                if (!frame_n[i] && address_flag[i] != 1'b1) begin
+                if (!frame_n[i] && !address_flag[i]) begin
                     address[i] <= {din[i], address[i][3:1]};
                     address_cnt[i] <= address_cnt[i] + 1;
                 end                
@@ -76,10 +81,10 @@ module router (
     
     genvar x;
     generate
-        for (x = 0; x < 16; x = x + 1) begin
+        for (x = 0; x < 16; x = x + 1) begin : addr_flag
             assign address_flag[x] = address_cnt[x][2];
         end
-        for (x = 0; x < 16; x = x + 1) begin
+        for (x = 0; x < 16; x = x + 1) begin : reset_frame
             always @(frame_n[x]) begin
                 // Begin of a package
                 // Ending of a package
@@ -94,6 +99,7 @@ module router (
         for (x = 0; x < 16; x = x + 1) begin : decoder
             decoder4_16 out_sel_decode(.en(address_flag[x]), .in(address[x]), .out(out_sel_decoder[x]));
         end
+        
         for (x = 0; x < 16; x = x + 1) begin : decoder_input_bus
             assign out_sel_wire[x] = {  out_sel_decoder[15][x],
                                         out_sel_decoder[14][x],
@@ -119,19 +125,22 @@ module router (
         end
         // Data output port
         for (x = 0; x < 16; x = x + 1) begin : data_out
-            assign dout[x] = (valid_n[in_sel[x]] && frame_n[in_sel[x]]) ? 1'bZ : din[in_sel[x]];
+            selector data(.sel(in_sel[x]), .in(din), .out(dout_t[x]));
+            assign dout[x] = (busy[x] && valid_n[in_sel[x]]) ? 1'bz : dout_t[x];
         end
         // Valid output port
         for (x = 0; x < 16; x = x + 1) begin : valid_out
-            assign valido_n[x] = (address_flag[in_sel[x]]) ? valid_n[in_sel[x]] : 1'bZ;
+            selector valid(.sel(in_sel[x]), .in(valid_n), .out(valido_t[x]));
+            assign valido_n[x] = (busy[x]) ? valido_t[x] : 1'b1;
         end
         // Frame output port
         for (x = 0; x < 16; x = x + 1) begin : frame_out
-            assign frameo_n[x] = (address_flag[in_sel[x]]) ? frame_n[in_sel[x]] : 1'bZ;
+            selector frame(.sel(in_sel[x]), .in(frame_n), .out(frameo_t[x]));
+            assign frameo_n[x] = (busy[x]) ? frameo_t[x] : 1'b1;
         end
         // Busy output signal
         for (x = 0; x < 16; x = x + 1) begin : busy_out
-            assign busy_n[x] = (busy[x]);
+            assign busy_n[x] = (~busy[x]);
         end
     endgenerate
 endmodule
